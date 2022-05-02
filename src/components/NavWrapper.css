@@ -1,0 +1,20 @@
+.nav-wrapper {
+    background-color: #2B2B2B;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+nav a {
+    color: lightgrey;
+    text-decoration: none;
+    padding: 1.5%;
+    transition-duration: 0.2s;
+}
+
+nav a:hover {
+    color: white;
+}
