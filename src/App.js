@@ -1,50 +1,44 @@
-import { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import './App.css';
-import NavWrapper from './components/NavWrapper';
-import SubNav from './components/SubNav';
-import Home from './components/Home';
-import Mac from './components/Mac';
-import Search from './components/Search';
-import IPhone from './components/IPhone';
-
-
+import { useState } from "react";
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
+import NavWrapper from "./components/NavWrapper";
+import SubNav from "./components/SubNav";
+import Home from "./components/Home";
+import Mac from "./components/Mac";
+import Search from "./components/Search";
+import IPhone from "./components/IPhone";
 
 function App() {
   const [data, setData] = useState([]);
 
   const updateData = (arr) => {
     setData(arr);
-  }
+  };
 
   return (
     <div className="App">
+      <header>
+        <NavWrapper change={updateData} />
+      </header>
 
-        <header>
-          <NavWrapper change={updateData}/>
-        </header>
+      <section className="main">
+        <SubNav data={data} />
 
-        <section className='main'>
-          <SubNav data={data} />
-
-          <Switch>
+        <Switch>
           <Route path="/mac">
-            <Mac/>
+            <Mac />
           </Route>
           <Route path="/iPhone">
-            <IPhone/>
+            <IPhone />
           </Route>
           <Route path="/search">
-            <Search/>
+            <Search />
           </Route>
           <Route path="/">
-            <Home/>
+            <Home />
           </Route>
         </Switch>
-
-        </section>
-
-        
+      </section>
     </div>
   );
 }

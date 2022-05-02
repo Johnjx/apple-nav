@@ -1,6 +1,8 @@
+import { useEffect } from "react"; 
 import { Link, useRouteMatch, NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileScreen } from "@fortawesome/free-solid-svg-icons" 
+import "./SubNav.css"
 
 const SubNav = (props) => {
     const { data } = props
