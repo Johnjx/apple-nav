@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import NavWrapper from './components/NavWrapper';
@@ -7,16 +8,24 @@ import Mac from './components/Mac';
 import Search from './components/Search';
 import IPhone from './components/IPhone';
 
+
+
 function App() {
+  const [data, setData] = useState([]);
+
+  const updateData = (arr) => {
+    setData(arr);
+  }
+
   return (
     <div className="App">
 
         <header>
-          <NavWrapper/>
+          <NavWrapper change={updateData}/>
         </header>
 
         <section className='main'>
-          <SubNav/>
+          <SubNav data={data} />
 
           <Switch>
           <Route path="/mac">
@@ -32,7 +41,7 @@ function App() {
             <Home/>
           </Route>
         </Switch>
-        
+
         </section>
 
         

@@ -1,4 +1,6 @@
-const Mac = () => {
+const Mac = (props) => {
+    
+
     return (
         <h1>MAC PAGE</h1>
     )
